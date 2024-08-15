@@ -5,6 +5,114 @@
 {% endblock %}
 
 {% block main %}
+
+<style type="text/css">
+    .window {
+            background-color: black; /* Window background */
+            color: white; /* Text color */
+            border: 2px solid #A0A0A0; /* Window border */
+            border-radius: 0; /* Square corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            padding: 10px; /* Padding for content */
+            position: absolute; /* Position for draggable windows */
+            width: 50vw; /* Example width */
+            max-height: 35vh; /* Example height */
+            z-index: 2!important;
+            top: 30vh;
+            left: 25vw;
+        }
+
+
+        .window-body {
+            padding: 10px;
+            overflow-y: auto; /* Enable scrolling */
+            max-height: calc(100% - 40px); /* Allow space for the header */
+        }
+
+
+        .window-header {
+            background-color: #A0A0A0; /* Title bar color */
+            color: black; /* Title text color */
+            padding: 5px; /* Padding for title bar */
+            font-weight: bold; /* Bold title */
+            display: flex;
+            justify-content: space-between;
+        }
+        .close-btn {
+          background-color: rgba(0,0,0,0);
+          border: 2px solid white;
+          cursor: pointer;
+          outline: none;
+          color: white;
+          box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5); /* Simulates the outer border with spacing */
+        }
+        .hidescreen {
+            background-color: rgba(0,0,0,0.4);
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            display: block;
+            z-index: 999;
+
+        }
+</style>
+
+<div class="hidescreen" id="hidescreen"></div>
+<div class="window" id="info-window" style="height:450px;z-index: 999!important;">
+            <div class="window-header">
+                <span>Info</span>
+                <button class="close-btn" style="z-index:9999!important" onclick="document.getElementById('hidescreen').style.display = 'none';document.getElementById('info-window').style.display = 'none';">X</button>
+            </div>
+            <div class="window-body">
+                <p>we're hosting an event.</p><br/>
+                <a href="https://partiful.com/e/aI0JemmmmFTqX4U6HD90" style="border: 1px solid white;padding: 2px;padding-top:5px;padding-bottom: 5px;color: white;text-decoration: none;" target="_blank">learn more // join</a><br/><br/>
+                <p>Mark your calendars for an exhilarating journey into the world of FinTech cybersecurity at EtherX, happening from September 27 to September 29, 2024! Hosted by Aaditya Rengarajan, this intra-college event is exclusively open to all departments and years of PSG College of Technology. Whether you're a seasoned tech enthusiast or just starting out, EtherX promises to be an enriching experience for everyone.<br/>
+                <br/>
+                Registration:<br/>
+                ● Teams of 4 people<br/>
+                ● Register as a group or individually (we'll form teams for individuals)<br/>
+                <br/>
+                Event Schedule:<br/>
+                <br/>
+                Day 1 (Friday):<br/>
+                ● Kickoff Workshop: Led by a guest speaker, expert in FinTech cybersecurity<br/>
+                ● Sets the stage for the weekend<br/>
+                -<br/>
+                <br/>
+                Day 2 (Saturday):<br/>
+                <br/>
+                Workshops Start (10:00 AM):<br/>
+                ● Capture The Flag (CTF) Competitions<br/>
+                ● Open Source Intelligence (OSINT)<br/>
+                ● Finance Security Fundamentals<br/>
+                <br/>
+                Hands-On Session (11:00 AM - 12:00 PM):<br/>
+                ● Secure coding techniques<br/>
+                ● GitHub & GitGuardian<br/>
+                <br/>
+                ● Primary Hackathon: Case Study & OSINT Hacking Challenge (1:45 PM - 5:00 PM)<br/>
+                -<br/>
+                <br/>
+                Day 3 (Sunday):<br/>
+                <br/>
+                Speed Run Hackathon (9:00 AM):<br/>
+                ● Full internet access (except copying readymade code from GitHub)<br/>
+                ● Use tools like ChatGPT<br/>
+                ● Showcase problem-solving and creativity<br/>
+                <br/>
+                Valedictory Function & Prize Distribution (2:00 PM - 2:30 PM):<br/>
+                ● Participation certificates<br/>
+                ● Top prizes awarded<br/>
+                <br/>
+                Closing Note:<br/>
+                ● Enhance your cybersecurity skills<br/>
+                ● Network with like-minded peers<br/>
+                ● Compete in a thrilling environment<br/>
+                <br/>
+                Venue: PSG College of Technology</p>
+            </div>
+        </div>
+
 <div>
       <div class="vantaBG" id="hero-section" style="border-radius: 40px;">
         <div id="greeting" style="width: 100%;background-color: rgba(0,0,0,0.6);border-radius: 40px;min-height: 90vh;justify-content: center; align-items: center;display: flex;"><h1>
